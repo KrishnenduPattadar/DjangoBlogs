@@ -1,0 +1,30 @@
+{% extends 'blogsiteApp/base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="mb-4 text-center">All Blog Posts</h2>
+
+    {% for blog in blogs %}
+    <div class="card mb-4 shadow-sm">
+        <div class="card-body">
+            <div class="d-flex align-items-center mb-2">
+                <strong class="me-2">{{ blog.user.username }}</strong>
+            </div>
+            {% if blog.image %}
+            <img src="{{ blog.image.url }}" class="img-fluid mb-3" style="max-height: 300px; object-fit: cover;">
+            {% endif %}
+            <p>{{ blog.description }}</p>
+
+            {% if blog.user == user %}
+            <div>
+                <a href="{% url 'edit_post' blog.id %}" class="btn btn-sm btn-outline-primary">Edit</a>
+                <a href="{% url 'delete_post' blog.id %}" class="btn btn-sm btn-outline-danger">Delete</a>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+    {% empty %}
+    <p class="text-muted text-center">No posts available.</p>
+    {% endfor %}
+</div>
+{% endblock %}

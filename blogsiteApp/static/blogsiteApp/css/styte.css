@@ -1,0 +1,40 @@
+/* General body styling */
+body {
+    background-color: #f8f9fa; /* Light gray */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Center the login container */
+.container {
+    margin-top: 80px;
+}
+
+/* Login card styling */
+form {
+    background-color: #ec0404;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Headings */
+h2 {
+    font-weight: 600;
+    color: #343a40;
+}
+
+/* Input styling override if needed */
+input.form-control {
+    border-radius: 8px;
+}
+
+/* Submit button */
+button.btn-primary {
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+/* Error alert */
+.alert-danger {
+    border-radius: 8px;
+}
